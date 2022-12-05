@@ -33,7 +33,8 @@
         public void Flip()
         {
             this.Vertices.Reverse();
-            this.Vertices.ForEach(vertex => vertex.FlipNormal());
+            for (int i = 0; i < this.Vertices.Count; i++)
+                this.Vertices[i] = this.Vertices[i].FlipNormal();
             Plane.Flip();
         }
 
